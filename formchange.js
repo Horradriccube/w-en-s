@@ -1,7 +1,7 @@
 function abc() {
     $(weddingimage)
-            .removeClass('col-xs-12')
-            .addClass('col-xs-8');
+            .removeClass('col-md-12')
+            .addClass('col-md-8');
         
 };
 function def() {
