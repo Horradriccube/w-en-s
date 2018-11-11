@@ -1,0 +1,77 @@
+.row.flex {
+	display: inline-flex;
+	width: 100%;
+}
+.flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.flexthis .col-sm-4{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body {
+	background: black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-width: 100%;
+}
+
+#jumbo{
+	background-color: grey;
+}
+
+#thumb {
+	background-color: rgba(0,0,0,0);
+	border: 0px solid white;
+	/*border-color: rgba(0,0,0,0);*/
+	border-radius: 50%;
+	/*z-index: -10;*/
+	opacity: 0;
+}			
+#mainthumb {
+	background-color: rgba(0,0,0,0);
+	border: 0px;
+}
+
+#trouwen {
+	font-size: 3em;
+	color: gold;
+	text-align: center;
+}
+
+#datum {
+	font-size: 2em;
+	color: gold;
+	text-align: center;
+}
+
+#navimg {
+	height: 50px;
+}
+
+#demo {
+	font-family: engagement;
+	font-size: 2em;
+}
+#wens{
+	font-family: engagement;
+	font-size: 2em;
+}
+
+* {
+	transition: 1s;
+}
+
+#topbar {
+	opacity: 0.75;
+}

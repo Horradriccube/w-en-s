@@ -1,10 +1,20 @@
-function abc() {
+function makeSmaller() {
     $(weddingimage)
-            .removeClass('col-md-12')
-            .addClass('col-md-8');
+            .removeClass('col-sm-12')
+            .addClass('col-sm-8');
         
 };
-function def() {
+function makeBigger() {
+    $(weddingimage)
+            .removeClass('col-md-8')
+            .addClass('col-md-12');
+        
+};
+
+function resize() {
+
+}
+function showTiles() {
 	$(thumb)
     		.animate({
     			opacity: 1,
@@ -14,13 +24,22 @@ function def() {
     		});
     	};
 
-function scroll() {
-	$(breakhere)
-			.scrollTop(0);
+
+function hitTop() {
+    var elmt = document.getElementById("myBody"); 
+    var y = elmt.scrollTop;
+    if(y <= 0) {
+        return true;
+    };
+    //document.getElementById ("yValue").innerHTML = "y value: " + y;
 };
 
 $(window).scroll(function (event){
-	scroll();
-	abc();
-	setTimeout(def, 1000);
+    if(hitTop==true){
+        makeBigger();
+    }
+    else {
+        makeSmaller();
+    }
+	setTimeout(showTiles, 1000);
 });

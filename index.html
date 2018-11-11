@@ -4,91 +4,12 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Image Gallery</title>
+	<title>Wim en Shanna gaan trouwen!</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Engagement" rel="stylesheet">
-		<style>
-			.row.flex {
-				display: inline-flex;
-				width: 100%;
-			}
-			.flex {
-				display: -webkit-box;
-				display: -webkit-flex;
-				display: -ms-flexbox;
-				display: flex;
-				-webkit-flex-wrap: wrap;
-				-ms-flex-wrap: wrap;
-				flex-wrap: wrap;
-			}
-
-			.flexthis .col-md-4{
-              display: -webkit-box;
-              display: -webkit-flex;
-              display: -ms-flexbox;
-              display: flex;
-            }
-
-			body {
-				background: black;
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-width: 100%;
-			}
-
-			#jumbo{
-				background-color: grey;
-			}
-
-			#thumb {
-				background-color: rgba(0,0,0,0);
-				border: 0px solid white;
-				/*border-color: rgba(0,0,0,0);*/
-				border-radius: 50%;
-				/*z-index: -10;*/
-				opacity: 0;
-			}			
-			#mainthumb {
-				background-color: rgba(0,0,0,0);
-				border: 0px;
-				margin: auto;
-			}
-
-			#trouwen {
-				font-size: 3em;
-				color: gold;
-				text-align: center;
-			}
-
-			#datum {
-				font-size: 2em;
-				color: gold;
-				text-align: center;
-			}
-
-			#navimg {
-				height: 50px;
-			}
-
-			#demo {
-				font-family: engagement;
-				font-size: 2em;
-			}
-			#wens{
-				font-family: engagement;
-				font-size: 2em;
-			}
-
-			* {
-				transition: 1s;
-			}
-
-			#topbar {
-				opacity: 0.75;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body id="myBody" onscroll="hitTop()">
 
 <nav class="navbar navbar-inverse navbar-fixed-top" id="topbar">
 	<div class="container">
@@ -102,10 +23,9 @@
 			<a href="#" id="wens" class="navbar-brand">Wim en Shanna</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-nav-demo">
-<!-- 			<ul class="nav navbar-nav">
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul> -->
+			<ul class="nav navbar-nav">
+				<li id="yValue"></li>
+			</ul>
 			<ul class="nav navbar-nav navbar-right">
 <!-- 				<li><a href="#">Sign up</a></li>
 				<li><a href="#">Login</a></li> -->
@@ -118,64 +38,64 @@
 	</div>
 </nav>
 
-
 <div class="container">
 	<br><br><br id="breakhere">
+	<p id="yValue"></p>
 
 	<div class="flexthis flex">
 		<!-- <div class="img-responsive"> -->
 		<!-- <div class="row"> -->
-		<div id="weddingimage" class="col-md-12">
+		<div id="weddingimage" class="col-sm-12">
 				<div class="thumbnail" id="mainthumb">
 					<img src="images/Wedding8.png" alt="">
 				</div>
 		</div>
 		<a class="ct-btn-scroll ct-js-btn-scroll" href="#breakhere"></a>
 	<!-- </div> -->
-		<div class="col-md-4">
+		<div class="col-sm-4">
 			<div class="thumbnail" id="thumb">
 				<img src="images/2018po.png" alt="">
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-sm-4">
 			<div class="thumbnail" id="thumb">
 				<img src="images/2017po.png" alt="">
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-sm-4">
 			<div class="thumbnail" id="thumb">
 				<img src="images/2016po.png" alt="">
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-sm-4">
 			<div class="thumbnail" id="thumb">
 				<img src="images/2015po.png" alt="">
 			</div>
-		</div><div class="col-md-4">
+		</div><div class="col-sm-4">
 			<div class="thumbnail" id="thumb">
 				<img src="images/2014po.png" alt="">
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-sm-4">
 			<div class="thumbnail" id="thumb">
 				<img src="images/2013.png" alt="">
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-sm-4">
 			<div class="thumbnail" id="thumb">
 				<img src="images/2012po.png" alt="">
 			</div>
-		</div><div class="col-md-4">
+		</div><div class="col-sm-4">
 			<div class="thumbnail" id="thumb">
 				<img src="images/2011po.png" alt="">
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-sm-4">
 			<div class="thumbnail" id="thumb">
 				<img src="images/2010po.png" alt="">
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-sm-4">
 			<div class="thumbnail" id="thumb">
 				<img src="images/2009po.png" alt="">
 			</div>
@@ -185,36 +105,7 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"> </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
-<script id="countdown">
-// Set the date we're counting down to
-var countDownDate = new Date("Juli 13, 2019 11:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-    // Get todays date and time
-    var now = new Date().getTime();
-    
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
-    
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML ="Nog " + days + " dagen, " + hours + " uur,  "
-    + minutes + " minuten, en  " + seconds + " seconden!";
-    
-    // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-    }
-}, 1000);
-</script>
+<script type="text/javascript" src="countdown.js"></script>
 <script type="text/javascript" src="formchange.js"></script>
 </body>
 </html>
